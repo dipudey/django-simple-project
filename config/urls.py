@@ -16,7 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+# from apps.book_manager import views
+from apps.book_manager.view.import_book import ImportBookView
 
 urlpatterns = [
+    # path('admin/book_manager/book/import/', views.admin_new_route, name='admin_new_route'),
+    path('admin/book_manager/book/import/', ImportBookView.as_view(), name='admin_new_route'),
     path('admin/', admin.site.urls),
 ]

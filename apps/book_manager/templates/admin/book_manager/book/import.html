@@ -1,0 +1,15 @@
+{% extends 'admin/base_site.html' %}
+
+{% block title %}Custom Admin Template{% endblock %}
+
+{% block content %}
+    <div id="content-main">
+        <h1>Welcome to the Custom Admin Template</h1>
+        <!-- Your custom content here -->
+    <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+{% endblock %}
